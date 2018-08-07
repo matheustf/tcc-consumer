@@ -17,7 +17,7 @@ import com.puc.tcc.entrega.exceptions.ConsumerAvaliacaoException;
 public class AvaliacaoServiceImpl implements AvaliacaoService {
 
 	AvaliacaoRepository avaliacaoRepository;
-	
+
 	@Autowired
 	public AvaliacaoServiceImpl(AvaliacaoRepository avaliacaoRepository) {
 		this.avaliacaoRepository = avaliacaoRepository;
@@ -25,10 +25,10 @@ public class AvaliacaoServiceImpl implements AvaliacaoService {
 
 	@Override
 	public Avaliacao consultar(String id) throws ConsumerAvaliacaoException {
-		
+
 		Optional<Avaliacao> optional = avaliacaoRepository.findById(id);
 		Avaliacao avaliacao = validarAvaliacao(optional);
-		
+
 		return avaliacao;
 	}
 
@@ -42,18 +42,18 @@ public class AvaliacaoServiceImpl implements AvaliacaoService {
 
 	@Override
 	public Avaliacao incluir(Avaliacao avaliacao) {
-		
+
 		avaliacaoRepository.save(avaliacao);
-		
+
 		return avaliacao;
 	}
 
 	@Override
 	public Avaliacao atualizar(String id, Avaliacao avaliacaoDetails) throws ConsumerAvaliacaoException {
-		
+
 		Optional<Avaliacao> optional = avaliacaoRepository.findById(id);
 		Avaliacao avaliacao = validarAvaliacao(optional);
-		
+
 		avaliacaoRepository.save(avaliacao);
 
 		return avaliacao;
@@ -61,17 +61,22 @@ public class AvaliacaoServiceImpl implements AvaliacaoService {
 
 	@Override
 	public ResponseEntity<Avaliacao> deletar(String id) throws ConsumerAvaliacaoException {
-		
+
 		Optional<Avaliacao> optional = avaliacaoRepository.findById(id);
 		validarAvaliacao(optional);
-		
+
 		avaliacaoRepository.deleteById(id);
-		
+
 		return ResponseEntity.noContent().build();
 	}
 
 	private Avaliacao validarAvaliacao(Optional<Avaliacao> optional) throws ConsumerAvaliacaoException {
 		return Optional.ofNullable(optional).get()
-		.orElseThrow(() -> new ConsumerAvaliacaoException(HttpStatus.NOT_FOUND, Constants.ITEM_NOT_FOUND));
+				.orElseThrow(() -> new ConsumerAvaliacaoException(HttpStatus.NOT_FOUND, Constants.ITEM_NOT_FOUND));
+	}
+
+	@Override
+	public List<Avaliacao> buscarPorData(String data) {
+		return avaliacaoRepository.findByDataDaAvaliacao(data);
 	}
 }

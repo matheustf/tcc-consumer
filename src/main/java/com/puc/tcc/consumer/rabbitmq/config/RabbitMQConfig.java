@@ -20,7 +20,8 @@ public class RabbitMQConfig implements RabbitListenerConfigurer {
 
 	public static final String ROUTING_ENTREGA = "my.queue.entregas";
 	public static final String ROUTING_AVALIACOES = "my.queue.avaliacoes";
-
+	public static final String ROUTING_PEDIDOS = "my.queue.pedidos";
+	
 	@Bean
 	Queue queueEntregas() {
 		return new Queue(ROUTING_ENTREGA, true);
@@ -29,6 +30,11 @@ public class RabbitMQConfig implements RabbitListenerConfigurer {
 	@Bean
 	Queue queueAvaliacoes() {
 		return new Queue(ROUTING_AVALIACOES, true);
+	}
+	
+	@Bean
+	Queue queuePedidos() {
+		return new Queue(ROUTING_PEDIDOS, true);
 	}
 
 	@Bean

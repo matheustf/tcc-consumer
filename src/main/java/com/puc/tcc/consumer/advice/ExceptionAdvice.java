@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.puc.tcc.entrega.exceptions.ConsumerAvaliacaoException;
 import com.puc.tcc.entrega.exceptions.ConsumerEntregaException;
+import com.puc.tcc.entrega.exceptions.ConsumerPedidoException;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -46,6 +47,13 @@ public class ExceptionAdvice {
 		return processError(ex.getMessage(),ex.getStatusCode());
 	}
 
+	@ResponseBody
+	@ExceptionHandler(ConsumerPedidoException.class)
+	public ResponseEntity<Base> processParameterizedValidationError(ConsumerPedidoException ex) {
+		log.error(ex.getMessage(),ex);
+		return processError(ex.getMessage(),ex.getStatusCode());
+	}
+	
 	private ResponseEntity<Base> processError(String error,HttpStatus headerStatus) {
 		Base baseDTO = new Base(headerStatus.value(),error);
 		HttpHeaders httpHeaders = new HttpHeaders();

@@ -18,6 +18,8 @@ public interface AvaliacaoService {
 	Avaliacao atualizar(String id, Avaliacao avaliacaoDetails) throws ConsumerAvaliacaoException;
 
 	ResponseEntity<Avaliacao> deletar(String id) throws ConsumerAvaliacaoException;
+
+	List<Avaliacao> buscarPorData(String data);
 	
 
 }
