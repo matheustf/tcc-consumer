@@ -24,6 +24,8 @@ public class Avaliacao implements Serializable{
 
 	@Id
 	private String id;
+	
+	private String codigoDaAvaliacao;
 
 	private String idCliente;
 	

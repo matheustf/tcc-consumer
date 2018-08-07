@@ -21,5 +21,6 @@ public interface PedidoService {
 
 	Pedido gerarRelatorio(String id) throws ConsumerPedidoException;
 
+	List<Pedido> buscarPorData(String data);
 
 }

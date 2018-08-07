@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 import com.puc.tcc.consumer.consts.Constants;
 import com.puc.tcc.consumer.model.Pedido;
 import com.puc.tcc.consumer.repository.PedidoRepository;
-import com.puc.tcc.entrega.exceptions.ConsumerEntregaException;
 import com.puc.tcc.entrega.exceptions.ConsumerPedidoException;
 
 @Service
@@ -83,5 +82,10 @@ public class PedidoServiceImpl implements PedidoService {
 		Pedido pedido = validarPedido(optional);
 		
 		return pedido;
+	}
+	
+	@Override
+	public List<Pedido> buscarPorData(String data) {
+		return (List<Pedido>) pedidoRepository.findByDataDaPedido(data);
 	}
 }

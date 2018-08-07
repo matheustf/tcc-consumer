@@ -27,6 +27,8 @@ public class Entrega implements Serializable{
 
 	@Id
 	private String id;
+	
+	private String codigoDaEntrega;
 
 	private String idCliente;
 	

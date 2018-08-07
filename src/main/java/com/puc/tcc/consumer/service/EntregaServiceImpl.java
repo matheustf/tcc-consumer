@@ -74,4 +74,8 @@ public class EntregaServiceImpl implements EntregaService {
 		return Optional.ofNullable(optional).get()
 		.orElseThrow(() -> new ConsumerEntregaException(HttpStatus.NOT_FOUND, Constants.ITEM_NOT_FOUND));
 	}
+	
+	public List<Entrega> buscarPorData(String data) {
+		return entregaRepository.findByHistoricoDeEntregaByData(data);
+	}
 }

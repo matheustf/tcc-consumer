@@ -19,5 +19,7 @@ public interface EntregaService {
 
 	ResponseEntity<Entrega> deletar(String id) throws ConsumerEntregaException;
 
+	List<Entrega> buscarPorData(String data);
+
 
 }
