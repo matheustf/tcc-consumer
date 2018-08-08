@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -77,6 +78,6 @@ public class AvaliacaoServiceImpl implements AvaliacaoService {
 
 	@Override
 	public List<Avaliacao> buscarPorData(String data) {
-		return avaliacaoRepository.findByDataDaAvaliacao(data);
+		return avaliacaoRepository.findByDataDaAvaliacao(data, PageRequest.of(0,500));
 	}
 }

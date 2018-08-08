@@ -18,7 +18,7 @@ import com.puc.tcc.consumer.service.EntregaService;
 import com.puc.tcc.consumer.service.PedidoService;
 
 @RestController
-@RequestMapping("/relatorio/avaliacao")
+@RequestMapping("/relatorio")
 public class RelatorioController {
 	
 	private AvaliacaoService avaliacaoService;
@@ -34,7 +34,7 @@ public class RelatorioController {
 		this.entregaService = entregaService;
 	}
 
-	@PostMapping()
+	@PostMapping("/avaliacao")
 	public ResponseEntity<List<Avaliacao>> buscarAvaliacoes(@RequestBody String data) {
 		
 		List<Avaliacao> listAvaliacoes = avaliacaoService.buscarPorData(data);
@@ -42,7 +42,7 @@ public class RelatorioController {
 		return new ResponseEntity<List<Avaliacao>>(listAvaliacoes, HttpStatus.OK);
 	}
 	
-	@PostMapping()
+	@PostMapping("/pedido")
 	public ResponseEntity<List<Pedido>> buscarPedidos(@RequestBody String data) {
 		
 		List<Pedido> listPedidos = pedidoService.buscarPorData(data);
@@ -50,7 +50,7 @@ public class RelatorioController {
 		return new ResponseEntity<List<Pedido>>(listPedidos, HttpStatus.OK);
 	}
 	
-	@PostMapping()
+	@PostMapping("/entrega")
 	public ResponseEntity<List<Entrega>> buscarEntregas(@RequestBody String data) {
 		
 		List<Entrega> listEntregas = entregaService.buscarPorData(data);

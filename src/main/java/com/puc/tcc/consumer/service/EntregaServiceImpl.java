@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -76,6 +77,6 @@ public class EntregaServiceImpl implements EntregaService {
 	}
 	
 	public List<Entrega> buscarPorData(String data) {
-		return entregaRepository.findByHistoricoDeEntregaByData(data);
+		return entregaRepository.findByHistoricoDeEntregaByData(data, PageRequest.of(0,500));
 	}
 }

@@ -1,0 +1,4 @@
+org.eclipse.m2e.logback.configuration: The org.eclipse.m2e.logback.configuration bundle was activated before the state location was initialized.  Will retry after the state location is initialized.
+ORM initialization successful
+App events bus { name: 'booted', namespace: 'shared' }
+App events bus { name: 'booted', namespace: 'requester' }

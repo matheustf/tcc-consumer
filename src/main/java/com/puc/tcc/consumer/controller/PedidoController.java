@@ -21,7 +21,7 @@ import com.puc.tcc.consumer.service.PedidoService;
 import com.puc.tcc.entrega.exceptions.ConsumerPedidoException;
 
 @RestController
-@RequestMapping("/relatorio/pedido")
+@RequestMapping("/pedido")
 public class PedidoController {
 	
 	private PedidoService pedidoService;

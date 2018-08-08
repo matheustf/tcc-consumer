@@ -23,10 +23,11 @@ import lombok.NoArgsConstructor;
 public class Pedido implements Serializable{
 
 
+
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = -911442392543637915L;
 
 	@Id
 	private String idPedido;
