@@ -33,27 +33,6 @@ public class ExceptionAdvice {
 		return processError(ex.getBindingResult().getAllErrors().get(0).getDefaultMessage(),HttpStatus.BAD_REQUEST);
 	}
 	
-	@ResponseBody
-	@ExceptionHandler(ConsumerEntregaException.class)
-	public ResponseEntity<Base> processParameterizedValidationError(ConsumerEntregaException ex) {
-		log.error(ex.getMessage(),ex);
-		return processError(ex.getMessage(),ex.getStatusCode());
-	}
-	
-	@ResponseBody
-	@ExceptionHandler(ConsumerAvaliacaoException.class)
-	public ResponseEntity<Base> processParameterizedValidationError(ConsumerAvaliacaoException ex) {
-		log.error(ex.getMessage(),ex);
-		return processError(ex.getMessage(),ex.getStatusCode());
-	}
-
-	@ResponseBody
-	@ExceptionHandler(ConsumerPedidoException.class)
-	public ResponseEntity<Base> processParameterizedValidationError(ConsumerPedidoException ex) {
-		log.error(ex.getMessage(),ex);
-		return processError(ex.getMessage(),ex.getStatusCode());
-	}
-	
 	private ResponseEntity<Base> processError(String error,HttpStatus headerStatus) {
 		Base baseDTO = new Base(headerStatus.value(),error);
 		HttpHeaders httpHeaders = new HttpHeaders();
