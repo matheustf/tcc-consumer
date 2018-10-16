@@ -10,9 +10,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.puc.tcc.consumer.consts.Constants;
+import com.puc.tcc.consumer.exceptions.ConsumerEntregaException;
 import com.puc.tcc.consumer.model.Entrega;
 import com.puc.tcc.consumer.repository.EntregaRepository;
-import com.puc.tcc.entrega.exceptions.ConsumerEntregaException;
 
 @Service
 public class EntregaServiceImpl implements EntregaService {

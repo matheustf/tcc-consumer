@@ -10,9 +10,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.puc.tcc.consumer.consts.Constants;
+import com.puc.tcc.consumer.exceptions.ConsumerAvaliacaoException;
 import com.puc.tcc.consumer.model.Avaliacao;
 import com.puc.tcc.consumer.repository.AvaliacaoRepository;
-import com.puc.tcc.entrega.exceptions.ConsumerAvaliacaoException;
 
 @Service
 public class AvaliacaoServiceImpl implements AvaliacaoService {

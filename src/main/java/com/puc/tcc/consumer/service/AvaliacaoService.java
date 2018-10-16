@@ -4,8 +4,8 @@ import java.util.List;
 
 import org.springframework.http.ResponseEntity;
 
+import com.puc.tcc.consumer.exceptions.ConsumerAvaliacaoException;
 import com.puc.tcc.consumer.model.Avaliacao;
-import com.puc.tcc.entrega.exceptions.ConsumerAvaliacaoException;
 
 public interface AvaliacaoService {
 

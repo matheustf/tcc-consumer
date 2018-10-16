@@ -16,9 +16,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.puc.tcc.consumer.exceptions.ConsumerPedidoException;
 import com.puc.tcc.consumer.model.Pedido;
 import com.puc.tcc.consumer.service.PedidoService;
-import com.puc.tcc.entrega.exceptions.ConsumerPedidoException;
 
 @RestController
 @RequestMapping("/pedido")

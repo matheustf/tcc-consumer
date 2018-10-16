@@ -4,8 +4,8 @@ import java.util.List;
 
 import org.springframework.http.ResponseEntity;
 
+import com.puc.tcc.consumer.exceptions.ConsumerEntregaException;
 import com.puc.tcc.consumer.model.Entrega;
-import com.puc.tcc.entrega.exceptions.ConsumerEntregaException;
 
 public interface EntregaService {
 

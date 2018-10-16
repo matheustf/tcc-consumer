@@ -1,4 +1,4 @@
-package com.puc.tcc.entrega.exceptions;
+package com.puc.tcc.consumer.exceptions;
 
 import org.springframework.http.HttpStatus;
 
@@ -11,7 +11,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class ConsumerEntregaException extends Exception {
+public class ConsumerAvaliacaoException extends Exception {
 
 	private static final long serialVersionUID = 1L;
 	

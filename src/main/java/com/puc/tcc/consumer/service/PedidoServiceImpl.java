@@ -10,9 +10,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.puc.tcc.consumer.consts.Constants;
+import com.puc.tcc.consumer.exceptions.ConsumerPedidoException;
 import com.puc.tcc.consumer.model.Pedido;
 import com.puc.tcc.consumer.repository.PedidoRepository;
-import com.puc.tcc.entrega.exceptions.ConsumerPedidoException;
 
 @Service
 public class PedidoServiceImpl implements PedidoService {

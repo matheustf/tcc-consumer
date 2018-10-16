@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.puc.tcc.entrega.exceptions.ConsumerAvaliacaoException;
-import com.puc.tcc.entrega.exceptions.ConsumerEntregaException;
-import com.puc.tcc.entrega.exceptions.ConsumerPedidoException;
+import com.puc.tcc.consumer.exceptions.ConsumerAvaliacaoException;
+import com.puc.tcc.consumer.exceptions.ConsumerEntregaException;
+import com.puc.tcc.consumer.exceptions.ConsumerPedidoException;
 
 import lombok.extern.slf4j.Slf4j;
 
